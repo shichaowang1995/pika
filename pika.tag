@@ -13,6 +13,16 @@
   <button onclick={ feed }>Feed</button>
   <button onclick={ unfeed }>Not Feed</button>
 
+  <div if={!userInfo}>
+    <label>What you want to teach Pikachu to say:</label>
+    <input type="text" ref="userWord" placeholder="Enter the words">
+      <button onclick={ userCon }>Confirm</button>
+  </div>
+  <div if={userInfo}>
+
+    <h1>Pikachu said:{userInfo.userWord}</h1>
+    <button onclick={userNew}>Teach some new language</button>
+  </div>
 
   <script>
     //make a copy of my pet object and call it that
@@ -63,6 +73,16 @@
       this.decEnergy();
       this.checkStatus();
     }
+
+    this.userCon = function(e){
+      this.userInfo = {
+        userWord: this.refs.userWord.value,
+      }
+    }
+    this.userNew = function(e){
+      this.userInfo = false;
+    }
+
   </script>
 
   <style>
