@@ -21,7 +21,7 @@
   <div if={userInfo}>
 
     <h1>Pikachu said:{userInfo.userWord}</h1>
-    <button onclick={userNew}>Teach some new language</button>
+    <button onclick={userNew}>Teach some new words</button>
   </div>
 
   <script>
